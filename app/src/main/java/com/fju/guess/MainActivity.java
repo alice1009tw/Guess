@@ -29,7 +29,10 @@ public class MainActivity extends AppCompatActivity {
         }else if(number > random){
             Toast.makeText(this, "小一點", Toast.LENGTH_LONG).show();
         }else{
-            Toast.makeText(this, "答對了", Toast.LENGTH_LONG).show();
+            new AlertDialog.Builder(this)
+                    .setMessage("答對了")
+                    .setPositiveButton("ok", null)
+                    .show();
 
         }
     }
