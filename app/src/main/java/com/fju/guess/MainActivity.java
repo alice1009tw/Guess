@@ -21,18 +21,15 @@ public class MainActivity extends AppCompatActivity {
 
     public void guess(View view){
         EditText edNumber = (EditText) findViewById(R.id.ed_number);
-        int Answer = Integer.parseInt(edNumber.getText().toString());
-        int Number;
-        Number = (int)(Math.random()*10)+1;
-        if(Answer < Number) {
+        int number = Integer.parseInt(edNumber.getText().toString());
+        int random;
+        random = (int)(Math.random()*10)+1;
+        if(number < random) {
             Toast.makeText(this, "大一點", Toast.LENGTH_LONG).show();
-        }else if(Answer > Number){
+        }else if(number > random){
             Toast.makeText(this, "小一點", Toast.LENGTH_LONG).show();
         }else{
-        new AlertDialog.Builder(this)
-                .setMessage("答對了")
-                .setPositiveButton("ok" , null)
-                .show();
+            Toast.makeText(this, "答對了", Toast.LENGTH_LONG).show();
 
         }
     }
